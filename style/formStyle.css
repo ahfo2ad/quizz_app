@@ -1,0 +1,61 @@
+.container{
+    border: 1px solid #005CC8;
+    padding: 20px 20px 30px;
+    margin: 10px auto;
+    width: 600px;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+.container h1 {
+    text-align: center;
+    color: #005CC8;
+    margin-bottom: 30px;
+}
+.container form {
+    width: 90%;
+    margin: 0 auto;
+}
+.container form .usnm, 
+.container form .usps, 
+.container form .confps, 
+.container form .usmail {
+/* .container form .usgender { */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.container form label {
+    width: 27%;
+}
+.container form input:not([type="radio"]) {
+    width: 70%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.container form .usgender {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: -12px;
+    margin-bottom: 20px;
+}
+.container form .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.container form input[type="submit"], 
+.container form input[type="reset"] {
+    width: 40%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+        font-size: 17px;
+}
+
+span{
+    display:none;
+    color:red;
+}

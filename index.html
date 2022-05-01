@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style/formStyle.css">
+    <title>registration</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>registration form</h1>
+        <form method="get" action="loginForm.html">
+                
+            <div class="usnm">
+                <label>userName</label>
+                <input type="text" id="txtusername" name="username" /> <br>
+                <span id="spanusername">Sorry Your UserName Is InCorrect</span>
+            </div>
+            <div class="usps">
+                <label>password</label>
+                <input type="password" id="txtuserpass" name="userpass" />
+                <span id="spanuserpass">Sorry Your UserPass Is InCorrect</span>
+            </div>
+            <div class="confps">
+                
+                <label>confirm password</label>
+                <input type="password" id="txtuserpass2" name="userpass2" />
+                <span id="spanuserpass2">passwords not matched</span>
+            </div>
+            <div class="usmail"> 
+                <label>userEmail</label>
+                <input type="text" id="txtuseremail" name="useremail" />
+                <span id="spanuseremail">Sorry Your UserEmail Is InCorrect</span>
+            </div> 
+                <!-- gender  -->
+               
+                <label>gender</label>
+            <div class="usgender">   
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">male</label>
+            
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">female</label>
+                
+                <span id="spanusergender">must choose gender</span>
+            </div>
+                <!-- gender  -->
+
+            <div class="btns">    
+                <input type="submit" value="Ok" />
+                <input type="reset" value="Cancel" />
+            </div>
+
+        </form>
+    </div>
+    <script src="js/registration.js"></script>
+</body>
+</html>
