@@ -4,7 +4,6 @@ let welcomName = document.querySelector(".welcoming span");
 let quizname = document.querySelector(".category span");
 let countspan = document.querySelector(".count span");
 let bullets = document.querySelector(".bullets");
-// let bulletSpanContainer = document.querySelector(".bullets .spans");
 let quizArea = document.querySelector(".quiz-area");
 let answersArea = document.querySelector(".answers-area");
 let submitBtn = document.querySelector(".submitting");
@@ -46,7 +45,7 @@ function getQuestions() {
             addingQuesContent(convertquestojs[currentIndex], quesnumber);
 
             // timer function to start time
-            timer(15, quesnumber);
+            timer(1800, quesnumber);
 
             // submit function
             submitBtn.addEventListener("click", () => {
@@ -73,13 +72,8 @@ function getQuestions() {
                     // add new question content [data]
                     addingQuesContent(convertquestojs[currentIndex], quesnumber);
 
-                    // ============== from my self ===================================
                     // decrease counter of the questions by 1 after click submiting ==
                     countspan.innerHTML--;
-                    // ===============================================================
-
-                    // bullets function
-                    bulletsFun();
 
                     // show results after submitting
                     showResults(quesnumber);
@@ -106,7 +100,8 @@ function getQuestions() {
         }
     };
 
-    myReq.open("GET", "qustions.json", true);
+    // open json file
+    myReq.open("GET", "json/qustions.json", true);
     myReq.send();
 }
 
@@ -121,21 +116,6 @@ function createBullets(n) {   // n => number
     // print number to html
     countspan.innerHTML = n-1;  // for remaining questions
 
-    // countspan.innerHTML = n-1;  // for count questions
-
-    // create Bullets span
-    // for(let i=0; i<n; i++) {
-
-    //     let bullet = document.createElement("span");
-
-    //     // check if the first span
-    //     if(i === 0) {
-    //         bullet.className = "active";
-    //     }
-
-    //     // append bullet spans to its container
-    //     bulletSpanContainer.appendChild(bullet);
-    // }
 }
 
 //addingQuesContent fun
@@ -225,22 +205,6 @@ function checkAnswer(correctAns , count) {
         rightAnswer++;
         console.log("yesssssssss");
     }
-}
-
-// bulletsFun function to color the current bullet question
-function bulletsFun() {
-
-    // select all bullets spans
-    let allBullets = document.querySelectorAll(".bullets .spans span");
-
-    // get array of bullets to loop for it
-    let arrayOfBullets = Array.from(allBullets);
-
-    arrayOfBullets.forEach((span, index) => {
-        if(currentIndex === index) {
-            span.className = "active";
-        }
-    })
 }
 
 // show results function after submitting

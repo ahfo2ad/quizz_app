@@ -1,0 +1,84 @@
+
+[
+  {
+    "quizName": "javaScript",
+    "title": "Who invented JavaScript?",
+    "answer_1": "Douglas Crockford",
+    "answer_2": "Brendan Eich",
+    "answer_3": "Sheryl Sandberg",
+    "answer_4": "James Gosling",
+    "right_answer": "Brendan Eich"
+  },
+  {
+    "title": "Which one of these is a JavaScript package manager?",
+    "answer_1": "Node.js",
+    "answer_2": "TypeScript",
+    "answer_3": "npm",
+    "answer_4": "Answer 1 And 3 Is Right",
+    "right_answer": "npm"
+  },
+  {
+    "title": "Which tool can you use to ensure code quality?",
+    "answer_1": "Angular",
+    "answer_2": "jQuery",
+    "answer_3": "RequireJS",
+    "answer_4": "ESLint",
+    "right_answer": "ESLint"
+  },
+  {
+    "title": "How do you write 'Hello World' in an alert box?",
+    "answer_1": "alertBox('Hello World');",
+    "answer_2": "msg('Hello World');",
+    "answer_3": "msgBox('Hello World');",
+    "answer_4": "alert('Hello World');",
+    "right_answer": "alert('Hello World');"
+  },
+  {
+    "title": "How to insert a comment that has more than one line?",
+    "answer_1": "<!--This comment has more than one line-->",
+    "answer_2": "/*This comment has more than one line*/",
+    "answer_3": "//This comment has more than one line//",
+    "answer_4": "All Solutions are Wrong",
+    "right_answer": "/*This comment has more than one line*/"
+  },
+  {
+    "title": "Inside which HTML element do we put the JavaScript?",
+    "answer_1": "<javascript>",
+    "answer_2": "<js>",
+    "answer_3": "<script>",
+    "answer_4": "<scripting>",
+    "right_answer": "<script>"
+  },
+  {
+    "title": "How do you round the number 7.25, to the nearest integer?",
+    "answer_1": "round(7.25)",
+    "answer_2": "Math.rnd(7.25)",
+    "answer_3": "Math.round(7.25)",
+    "answer_4": "rnd(7.25)",
+    "right_answer": "Math.round(7.25)"
+  },
+  {
+    "title": "How do you find the number with the highest value of x and y?",
+    "answer_1": "top(x,y)",
+    "answer_2": "Math.ceil(x,y)",
+    "answer_3": "ceil(x,y)",
+    "answer_4": "Math.Max(x,y)",
+    "right_answer": "Math.Max(x,y)"
+  },
+  {
+    "title": "How can you detect the client's browser name?",
+    "answer_1": "browser.name",
+    "answer_2": "client.navName",
+    "answer_3": "navigator.appName",
+    "answer_4": "All Is Right",
+    "right_answer": "navigator.appName"
+  },
+  {
+    "title": "Which event occurs when the user clicks on an HTML element?",
+    "answer_1": "onmouseclick",
+    "answer_2": "onchange",
+    "answer_3": "onclick",
+    "answer_4": "onmouseover",
+    "right_answer": "onclick"
+  }
+]

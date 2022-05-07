@@ -1,21 +1,17 @@
 window.addEventListener('load', function () {
 
-    // select all inputs 
+    // select inputs 
     txtusername = this.document.getElementById('txtusername');
-    // txtusername.focus();
     spanusername = this.document.getElementById('spanusername');
     txtusername.addEventListener('blur', function () {
-        /*console.log("Blure user Name");*/
         if (!isuserNameValid(txtusername.value)) {
             txtusername.focus();
             txtusername.select();
             spanusername.style.display = 'block';
-            // display span 
         } else {
             spanusername.style.display = 'none';
         }
     });//end of blure for username
-    // select all spans 
 
     // check userpass
     txtuserpass = this.document.getElementById('txtuserpass');
@@ -59,53 +55,45 @@ window.addEventListener('load', function () {
     });
 
     // check gender
-    // let genderSelected = document.querySelectorAll( 'input[name="gender"]');
     let genderSelected = document.getElementsByName('gender');
     console.log(genderSelected);
     spanusergender = this.document.getElementById('spanusergender');
-    // genderSelected.addEventListener('change', function () {
-    //     if(genderSelected[0].checked == false && genderSelected[1].checked == false) {
-    //         spanusergender.style.display = "block";
-    //     }
-    //     else {
-    //         spanusergender.style.display = "none";
-    //     }
-    // });
 
     // register submit event
     this.document.forms[0].addEventListener('submit', function (data) {
         
         if (!(isuserNameValid(txtusername.value) && isuserpassValid(txtuserpass.value) 
             && isuseremailvalid(txtuseremail.value) && isuserpassValid(txtuserpass2.value) 
-            && txtuserpass.value === txtuserpass2.value && genderSelected[0].checked == true || genderSelected[1].checked == true)) {
+            && txtuserpass.value === txtuserpass2.value &&
+            (genderSelected[0].checked == true || genderSelected[1].checked == true))) {
 
             // preven default 
             data.preventDefault();
 
                 // showing spans on submitting
-            if(spanusername.style.display == 'block') {
-                spanusername.style.display = 'none';
-            }
-            else {
+            if(!(isuserNameValid(txtusername.value))) {
                 spanusername.style.display = 'block';
             }
-            if(spanuserpass.style.display == 'none') {
+            else {
+                spanusername.style.display = 'none';
+            }
+            if(!(isuserpassValid(txtuserpass.value))) {
                 spanuserpass.style.display = 'block';
             }
             else {
-                spanuserpass.style.display = 'block';
+                spanuserpass.style.display = 'none';
             }
-            if(spanuserpass2.style.display == 'none') {
+            if(!(isuserpassValid(txtuserpass2.value))) {
                 spanuserpass2.style.display = 'block';
             }
             else {
-                spanuserpass2.style.display = 'block';
+                spanuserpass2.style.display = 'none';
             }
-            if(spanuseremail.style.display == 'none') {
+            if(!(isuseremailvalid(txtuseremail.value))) {
                 spanuseremail.style.display = 'block';
             }
             else {
-                spanuseremail.style.display = 'block';
+                spanuseremail.style.display = 'none';
             }
             if(genderSelected[0].checked == false && genderSelected[1].checked == false) {
                 spanusergender.style.display = 'block';
@@ -115,13 +103,10 @@ window.addEventListener('load', function () {
             }
             else 
             {
-                spanusergender.style.display = 'none';
+                spanusergender.style.display = 'block';
             }
-            // else {
-            //     spanusername.style.display = 'block';
-            // }
+            
         }
-
 
     });//end of submit
 
@@ -135,17 +120,17 @@ window.addEventListener('load', function () {
 
 
 });//end of load
+
+// validation functions
 function isuserNameValid(un) {
-    // pattern : letters small or capital length :  4,8
     var usernamepattern = /^[a-zA-Z]{4,8}$/;
-    return un.match(usernamepattern);// null | object
+    return un.match(usernamepattern);
 }
+
 function isuserpassValid(up) {
-    // pattern : letters small or capital length :  4,8
-    //var userpasswordpattern = /^[1-9]{5,7}$/;
-    //return up.match(userpasswordpattern);// null | object
     return up.match(/^[1-9]{5,7}$/);
 }
+
 function isuseremailvalid(ue) {
     return ue.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/);
 }
